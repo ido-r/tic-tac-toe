@@ -1,8 +1,10 @@
 import WebSocket from 'ws';
+import http from 'http';
+import { GameState } from './types';
 
 let wss: WebSocket.Server;
 
-export function initializeWebSocket(server: any) {
+export function initializeWebSocket(server: http.Server) {
   wss = new WebSocket.Server({ server });
 
   wss.on('connection', (ws: WebSocket) => {
@@ -10,7 +12,6 @@ export function initializeWebSocket(server: any) {
 
     ws.on('message', (message: string) => {
       console.log(`Received message: ${message}`);
-      // Handle incoming messages here if needed
     });
 
     ws.on('close', () => {
@@ -19,7 +20,7 @@ export function initializeWebSocket(server: any) {
   });
 }
 
-export function broadcastGameState(gameState: any) {
+export function broadcastGameState(gameState: GameState) {
   wss.clients.forEach((client: WebSocket) => {
     if (client.readyState === WebSocket.OPEN) {
       client.send(JSON.stringify({ event: 'gameState', data: gameState }));
