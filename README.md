@@ -12,10 +12,10 @@ This project implements a simple Tic-Tac-Toe game API using TypeScript and Expre
 
 ## Entities Used
 The game is structured around the following entities:
-    * Game Board: Represented as an array of cells (board), where each cell can be null, 'X', or 'O'.
-    * Current Player: Tracks whose turn it is (currentPlayer), alternating between 'X' and 'O'.
-    * Game Over Status: Indicates if the game has ended (gameOver).
-    * Winner: Stores the winner of the game (winner), which can be 'X', 'O', 'Draw', or null if there's no winner yet.
+1. Game Board: Represented as an array of cells (board), where each cell can be null, 'X', or 'O'.
+2. Current Player: Tracks whose turn it is (currentPlayer), alternating between 'X' and 'O'.
+3. Game Over Status: Indicates if the game has ended (gameOver).
+4. Winner: Stores the winner of the game (winner), which can be 'X', 'O', 'Draw', or null if there's no winner yet.
 
 ## Basic Flow
 1. Initialization
