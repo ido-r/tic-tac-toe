@@ -40,25 +40,14 @@ class GameService {
     }
 
     initGame(): GameState {
-        if (this.initialized) {
-            console.log('Resetting game state');
-            this.gameState = {
-                board: Array(9).fill(null),
-                currentPlayer: 'X',
-                gameOver: false,
-                winner: null,
-            };
-        } else {
-            console.log('Initializing game state');
-            this.gameState = {
-                board: Array(9).fill(null),
-                currentPlayer: 'X',
-                gameOver: false,
-                winner: null,
-            };
-            this.initialized = true;
-        }
-        
+        console.log('Initializing game state');
+        this.gameState = {
+            board: Array(9).fill(null),
+            currentPlayer: 'X',
+            gameOver: false,
+            winner: null,
+        };
+        this.initialized = true;        
         return this.gameState;
     }
 
